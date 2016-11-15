@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:body>
+    <ui:composition template="template.xhtml">
+        <ui:define name="content">
+            <h:inputText id="customerName"
+                         title="customer name"
+                         value="#{shoppingCartBean.customer.name}"
+                         required="true"
+                         requiredMessage="Error: A value is required."
+                         maxlength="55"/>
+            <h:dataTable value="#{shoppingCartBean.pizzas}" var="p"
+                         styleClass="table table-striped table-middle-align">
+                <h:column>
+                    <f:facet name="header">Name</f:facet>
+                    #{p.name}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Quantity</f:facet>
+                    #{shoppingCartBean.getQuantity(p.id)}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Price</f:facet>
+                    #{shoppingCartBean.getQuantity(p.id) * p.price}
+                </h:column>
+            </h:dataTable>
+            <h:commandButton action="#{shoppingCartBean.createOrder()}" styleClass="btn btn-success" value="Order" />
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

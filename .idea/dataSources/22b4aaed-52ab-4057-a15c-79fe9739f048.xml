@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Derby (Remote) - jdbc:derby://localhost:1527/">
+  <database-model serializer="dbm" rdbms="DERBY" format-version="2.6">
+    <schema id="1" name="APP">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="NULLID"/>
+    <schema id="3" name="SQLJ"/>
+    <schema id="4" name="SYS"/>
+    <schema id="5" name="SYSCAT"/>
+    <schema id="6" name="SYSCS_DIAG"/>
+    <schema id="7" name="SYSCS_UTIL"/>
+    <schema id="8" name="SYSFUN"/>
+    <schema id="9" name="SYSIBM"/>
+    <schema id="10" name="SYSPROC"/>
+    <schema id="11" name="SYSSTAT"/>
+    <table id="12" parent="1" name="CUSTOMER"/>
+    <table id="13" parent="1" name="ORDERITEM"/>
+    <table id="14" parent="1" name="PIZZA"/>
+    <table id="15" parent="1" name="PIZZAORDER"/>
+    <table id="16" parent="1" name="PIZZAORDER_ORDERITEM"/>
+    <table id="17" parent="1" name="SEQUENCE"/>
+    <column id="18" parent="12" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(10)|4</data-type>
+    </column>
+    <column id="19" parent="12" name="NAME">
+      <data-type>VARCHAR(255)|12</data-type>
+    </column>
+    <key id="20" parent="12" name="SQL161103142643570">
+      <name-surrogate>1</name-surrogate>
+      <columns>ID</columns>
+      <primary>1</primary>
+    </key>
+    <column id="21" parent="13" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(10)|4</data-type>
+    </column>
+    <column id="22" parent="13" name="QUANTITY">
+      <data-type>INTEGER(10)|4</data-type>
+    </column>
+    <column id="23" parent="13" name="PIZZA_ID">
+      <data-type>INTEGER(10)|4</data-type>
+    </column>
+    <key id="24" parent="13" name="SQL161103142643420">
+      <name-surrogate>1</name-surrogate>
+      <columns>ID</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="25" parent="13" name="ORDERITEM_PIZZA_ID">
+      <columns>PIZZA_ID</columns>
+      <ref-key>~.PIZZA.SQL161103142643080</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="26" parent="14" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(10)|4</data-type>
+      <sequence-identity>1</sequence-identity>
+      <default-expression>GENERATED_BY_DEFAULT</default-expression>
+    </column>
+    <column id="27" parent="14" name="NAME">
+      <data-type>VARCHAR(255)|12</data-type>
+    </column>
+    <column id="28" parent="14" name="PRICE">
+      <data-type>DOUBLE(52)|8</data-type>
+    </column>
+    <key id="29" parent="14" name="SQL161103142643080">
+      <name-surrogate>1</name-surrogate>
+      <columns>ID</columns>
+      <primary>1</primary>
+    </key>
+    <column id="30" parent="15" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(10)|4</data-type>
+    </column>
+    <column id="31" parent="15" name="CUSTOMER_ID">
+      <data-type>INTEGER(10)|4</data-type>
+    </column>
+    <key id="32" parent="15" name="SQL161103142643280">
+      <name-surrogate>1</name-surrogate>
+      <columns>ID</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="33" parent="15" name="PZZAORDERCSTOMERID">
+      <columns>CUSTOMER_ID</columns>
+      <ref-key>~.CUSTOMER.SQL161103142643570</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="34" parent="16" name="ORDER_ID">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(10)|4</data-type>
+    </column>
+    <column id="35" parent="16" name="ITEMS_ID">
+      <mandatory>1</mandatory>
+      <data-type>INTEGER(10)|4</data-type>
+    </column>
+    <column id="36" parent="16" name="ITEMS_KEY">
+      <data-type>INTEGER(10)|4</data-type>
+    </column>
+    <key id="37" parent="16" name="SQL161103142643720">
+      <name-surrogate>1</name-surrogate>
+      <columns>ORDER_ID
+ITEMS_ID</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="38" parent="16" name="PZZRDRRDERITEMRDRD">
+      <columns>ORDER_ID</columns>
+      <ref-key>~.PIZZAORDER.SQL161103142643280</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="39" parent="16" name="PZZRDRRDERITEMTMSD">
+      <columns>ITEMS_ID</columns>
+      <ref-key>~.ORDERITEM.SQL161103142643420</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="40" parent="17" name="SEQ_NAME">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(50)|12</data-type>
+    </column>
+    <column id="41" parent="17" name="SEQ_COUNT">
+      <data-type>DECIMAL(15)|3</data-type>
+    </column>
+    <key id="42" parent="17" name="SQL161101131315830">
+      <name-surrogate>1</name-surrogate>
+      <columns>SEQ_NAME</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>

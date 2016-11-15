@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Oracle - @localhost [2]">
+  <database-model serializer="dbm" rdbms="ORACLE" format-version="2.6">
+    <schema id="1" name="PIZZACASE">
+      <object-id>51</object-id>
+      <visible>1</visible>
+      <introspection-timestamp>2016-10-31.13:24:10</introspection-timestamp>
+    </schema>
+    <schema id="2" name="PUBLIC">
+      <object-id>1</object-id>
+    </schema>
+    <schema id="3" name="SYS"/>
+    <schema id="4" name="SYSTEM">
+      <object-id>5</object-id>
+    </schema>
+    <schema id="5" name="OUTLN">
+      <object-id>9</object-id>
+    </schema>
+    <schema id="6" name="DIP">
+      <object-id>14</object-id>
+    </schema>
+    <schema id="7" name="ORACLE_OCM">
+      <object-id>21</object-id>
+    </schema>
+    <schema id="8" name="DBSNMP">
+      <object-id>29</object-id>
+    </schema>
+    <schema id="9" name="APPQOSSYS">
+      <object-id>30</object-id>
+    </schema>
+    <schema id="10" name="CTXSYS">
+      <object-id>32</object-id>
+    </schema>
+    <schema id="11" name="XDB">
+      <object-id>34</object-id>
+    </schema>
+    <schema id="12" name="ANONYMOUS">
+      <object-id>35</object-id>
+    </schema>
+    <schema id="13" name="MDSYS">
+      <object-id>42</object-id>
+    </schema>
+    <schema id="14" name="HR">
+      <object-id>43</object-id>
+    </schema>
+    <schema id="15" name="FLOWS_FILES">
+      <object-id>44</object-id>
+    </schema>
+    <schema id="16" name="APEX_PUBLIC_USER">
+      <object-id>45</object-id>
+    </schema>
+    <schema id="17" name="APEX_040000">
+      <object-id>47</object-id>
+    </schema>
+    <schema id="18" name="SANDER">
+      <object-id>48</object-id>
+    </schema>
+    <schema id="19" name="POS">
+      <object-id>49</object-id>
+    </schema>
+    <schema id="20" name="CASE1">
+      <object-id>50</object-id>
+    </schema>
+    <schema id="21" name="XS$NULL">
+      <object-id>2147483638</object-id>
+    </schema>
+  </database-model>
+</dataSource>

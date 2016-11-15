@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:body>
+    <ui:composition template="template.xhtml">
+        <ui:define name="content">
+            <h:dataTable value="#{catalogBean.pizzas}" var="p"
+                         st yleClass="table table-striped table-middle-align">
+                <h:column>
+                    <f:facet name="header">Name</f:facet>
+                    #{p.name}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Price</f:facet>
+                    #{p.price}
+                </h:column>
+                <h:column>
+                    <h:commandButton action="#{shoppingCartBean.addToCart(p.id)}" styleClass="btn btn-success" value="Add to cart" />
+                </h:column>
+            </h:dataTable>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>
+
